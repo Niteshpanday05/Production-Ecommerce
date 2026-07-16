@@ -3,6 +3,7 @@ from apps.products.selectors.product_selector import (
 )
 
 
+
 class ProductService:
 
     @staticmethod
@@ -14,3 +15,14 @@ class ProductService:
     def detail(slug):
 
         return ProductSelector.product_detail(slug)
+    
+    
+    @staticmethod
+    def list_products():
+
+        return ProductSelector.get_products()
+
+    @staticmethod
+    def get_product(slug):
+
+        return ProductSelector.get_product(slug)

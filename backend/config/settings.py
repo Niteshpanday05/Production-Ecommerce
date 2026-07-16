@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     "apps.accounts",
+    "django_filters",
+
 ]
 
 MIDDLEWARE = [
@@ -119,3 +121,15 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 AUTH_USER_MODEL = "accounts.User"
+
+
+# rest framework setup
+
+REST_FRAMEWORK = {
+    
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    ],
+}
